@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>BLACKICE | ABOUT</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="favicon/x-icon" href="img/logo_small_icon_only_inverted.png" />
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/styles.css" />
+</head>
+
+<body>
+    <header class="bg-black shadow-lg h-40 justify-center items-center md:h-24 sm:mx-auto md:flex text-white">
+        <a href="Ainicio.html" class="border-black flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
+            <img class="w-52" src="img/logo_small.png" alt="logo" />
+        </a>
+        <nav class="header-links contents font-semibold text-base lg:text-lg ">
+            <ul class="flex ml-4 xl:ml-8 mr-auto flex-row 
+          items-center justify-center">
+                <li class="p-3 xl:p-6">
+                    <a href="Ainicio.html">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="p-3 xl:p-6 ">
+                    <a href="Aproductos.html">
+                        <span>Productos</span>
+                    </a>
+                </li>
+                <li class="p-3 xl:p-6 active">
+                    <a href="Aabout.html">
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="p-3 xl:p-6">
+                    <a href="Acart.html">
+                        <span>Carrito</span><span class="text-xs text-red-600 pl-1">4</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="border-black px-4 lg:px-6 xl:px-8 flex flex-row 
+        items-center justify-center">
+            <div class="relative text-gray-600">
+                <input type="search" name="serch" placeholder="Search"
+                    class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                        viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                        xml:space="preserve" width="512px" height="512px">
+                        <path
+                            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                    </svg>
+                </button>
+            </div>
+            <a href="Alogin.html">
+                <button
+                    class="bg-black md:ml-5 hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Sing
+                    In</button></a>
+        </div>
+    </header>
+    <!--FIN Cabecera-->
+
+    <!--Inicio Carousel-->
+    <section class="bg-black">
+        <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+
+        <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-2xl">
+            <div class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+                <span x-text="currentIndex"></span>/
+                <span x-text="images.length"></span>
+            </div>
+
+            <template x-for="(image, index) in images">
+                <figure class="h-96" x-show="currentIndex == index + 1">
+                    <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover" />
+                    <figcaption
+                        class="absolute inset-x-0 bottom-1 z-20 w-2/4 h-60 sm:h-52 md:h-40 lg:h-36 xl:h-28 mx-auto p-4 font-light text-sm text-center tracking-widest leading-snug bg-black bg-opacity-50 text-white">
+                        BLACKICE Limited es la plataforma global líder para la industria de la moda de lujo. Los
+                        negocios adicionales de BLACKICE incluyen Browns y Stadium Goods, que ofrecen productos de lujo
+                        a los consumidores, y New Guards Group, una plataforma para el desarrollo de marcas de moda
+                        globales.
+                    </figcaption>
+                </figure>
+            </template>
+
+            <button @click="back()"
+                class="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+                <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <button @click="next()"
+                class="absolute right-14 top-1/2 translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+                <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </article>
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('slider', () => ({
+                    currentIndex: 1,
+                    images: [
+                        'https://static.kendam.com/photos/full/20fa3273548c2bf6d5a7599b5691c89a_3341.jpg',
+                        'https://static.kendam.com/photos/full/3074eef4ad0b17043f3b9d0a8eb78872_3341.jpg',
+                        'https://static.kendam.com/photos/full/29edf5f6995b365bb3779ba0ca2f6349_3552.jpg',
+                        'https://static.kendam.com/photos/full/3908cbb144cf558ba6a823230d653fc1_3342.jpg',
+                        'https://static.kendam.com/photos/full/89be95af38db177b3c020a2133ee50a1_3342.jpg'
+                    ],
+                    back() {
+                        if (this.currentIndex > 1) {
+                            this.currentIndex = this.currentIndex - 1;
+                        }
+                    },
+                    next() {
+                        if (this.currentIndex < this.images.length) {
+                            this.currentIndex = this.currentIndex + 1;
+                        } else if (this.currentIndex <= this.images.length) {
+                            this.currentIndex = this.images.length - this.currentIndex + 1
+                        }
+                    },
+                }))
+            })
+        </script>
+    </section>
+    <!--FIN de Carousel-->
+
+    <!--Inicio ABOUT-->
+    <section class="pt-12">
+        <div class=" w-1/2 mx-auto h-12 sm:h-20 md:h-28 lg:h-40 xl:h-56">
+            <div class="relative pt-56 overflow-hidden rounded-2xl">
+                <img class="mx-auto absolute inset-0 object-cover" src="img/logo_large.png" alt="" />
+            </div>
+        </div>
+
+        <article class="max-w-prose mx-auto py-8 text-center">
+            <h1 class="text-2xl font-bold m-6">About BLACKICE S.L.</h1>
+
+            <p class="mt-6 m-6">BLACKICE Limited es la plataforma global líder para la industria de la moda de lujo.
+                Nuestra misión es ser la plataforma global para la moda de lujo, conectando a creadores, curadores y
+                consumidores. Fundada en 2007 por David Rodriguez por amor a la moda y lanzada en 2020 gracias a
+                Gonzalo Fernandez, BLACKICE comenzó como un mercado de comercio electrónico para boutiques de lujo
+                de todo el mundo.</p>
+
+            <p class="mt-6 m-6">Hoy, BLACKICE Marketplace conecta a clientes en más de 190 países y territorios con
+                artículos de más de 50 países
+                y más de 1,300 de las mejores marcas, boutiques y grandes almacenes del mundo, brindando una
+                experiencia de compra verdaderamente única y acceso a la selección más amplia de artículos de lujo
+                en un plataforma única.</p>
+
+            <p class="mt-6 m-6">Los negocios adicionales de BLACKICE incluyen Browns y Stadium Goods, que ofrecen
+                productos de lujo
+                a los consumidores, y New Guards Group, una plataforma para el desarrollo de marcas de moda
+                globales. BLACKICE ofrece su amplia gama de canales orientados al consumidor y soluciones de nivel
+                empresarial a la industria del lujo bajo su iniciativa Luxury New Retail. La iniciativa Luxury New
+                Retail también abarca BLACKICE Platform Solutions, que brinda servicios a clientes empresariales con
+                comercio electrónico y capacidades tecnológicas, e innovaciones en la tienda, como el conjunto de
+                productos tecnológicos BLACKICE Connected Retail.</p>
+
+        </article>
+    </section>
+    <!--FIN ABOUT-->
+
+    <!-- FEED -->
+    <section class="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
+        <div
+            class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
+
+            <!-- Image -->
+            <div
+                class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
+                <img src="img/about/bgfeed02.jpeg" class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20 ">
+            </div>
+
+            <!-- Content -->
+            <div class="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
+                <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                    Productos Originales
+                </h2>
+                <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
+                    Productos totalmente nuevos y certificados garantizanto el sello de calidad.
+                </p>
+                <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Productos certificados.
+                    </li>
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Nuevos y precintados.
+                    </li>
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Embalage y packagin originales.
+                    </li>
+                </ul>
+            </div>
+            <!-- End  Content -->
+        </div>
+        <div
+            class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16 xl:pt-12">
+
+            <!-- Content -->
+            <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
+                <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+                    Como en una boutique
+                </h2>
+                <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
+                    Gracias a nuestro amplio catalogo de marcas podrá comprar cualquier articulo que desee.
+                </p>
+                <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Compre desde su casa.
+                    </li>
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Envio gratuito.
+                    </li>
+                    <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
+                        <span
+                            class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-red-800 rounded-full"><span
+                                class="text-sm font-bold">✓</span></span> Devolución gratuita.
+                    </li>
+                </ul>
+            </div>
+            <!-- End  Content -->
+
+            <!-- Image -->
+            <div
+                class="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2">
+                <img src="img/about/bgfeed03.jpeg" class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32">
+            </div>
+        </div>
+    </section>
+    <!-- FIN FEED -->
+
+    <!-- TESTIMONIOS -->
+    <section class="flex items-center justify-center py-20 bg-white min-w-screen mt-8">
+        <div class="px-16 bg-white">
+            <div class="container flex flex-col items-start mx-auto lg:items-center">
+                <p
+                    class="relative flex items-start justify-start w-full text-lg font-bold tracking-wider text-red-700 uppercase lg:justify-center lg:items-center">
+                    No confíe solo en nuestra palabra</p>
+
+
+                <h2
+                    class="relative flex items-start justify-start w-full max-w-3xl text-5xl font-bold lg:justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="absolute right-0 hidden w-12 h-12 -mt-2 -mr-16 text-gray-200 lg:inline-block"
+                        viewBox="0 0 975.036 975.036">
+                        <path
+                            d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                        </path>
+                    </svg>
+                    Mire lo que otros están diciendo.
+                </h2>
+                <div class="block w-full h-0.5 max-w-lg mt-6 bg-purple-100 rounded-full"></div>
+
+                <div class="items-center justify-center w-full mt-12 mb-4 lg:flex">
+                    <div class="flex flex-col items-start justify-start w-full h-auto mb-12 lg:w-1/3 lg:mb-0">
+                        <div class="flex items-center justify-center">
+                            <div class="w-16 h-16 mr-4 overflow-hidden bg-gray-200 rounded-full">
+                                <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1700&amp;q=80"
+                                    class="object-cover w-full h-full">
+                            </div>
+                            <div class="flex flex-col items-start justify-center">
+                                <h4 class="font-bold text-gray-800">John Deer</h4>
+                                <p class="text-gray-600">El mejor portal de internet.</p>
+                            </div>
+                        </div>
+                        <blockquote class="mt-8 text-lg text-gray-500">"Esto es una obviedad si desea llevar su estilo
+                            al siguiente nivel. Si está buscando el conjunto de ropa definitivo, ¡aquí está!"
+                        </blockquote>
+                    </div>
+                    <div
+                        class="flex flex-col items-start justify-start w-full h-auto px-0 mx-0 mb-12 border-l border-r border-transparent lg:w-1/3 lg:mb-0 lg:px-8 lg:mx-8 lg:border-gray-200">
+                        <div class="flex items-center justify-center">
+                            <div class="w-16 h-16 mr-4 overflow-hidden bg-gray-200 rounded-full">
+                                <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2547&amp;q=80"
+                                    class="object-cover w-full h-full">
+                            </div>
+                            <div class="flex flex-col items-start justify-center">
+                                <h4 class="font-bold text-gray-800">Marta Velázquez</h4>
+                                <p class="text-gray-600">Increible servicio.</p>
+                            </div>
+                        </div>
+                        <blockquote class="mt-8 text-lg text-gray-500">"Gracias por crear este servicio. Mi vida es
+                            mucho más fácil. Gracias por hacer un producto tan bueno."</blockquote>
+                    </div>
+                    <div class="flex flex-col items-start justify-start w-full h-auto lg:w-1/3">
+                        <div class="flex items-center justify-center">
+                            <div class="w-16 h-16 mr-4 overflow-hidden bg-gray-200 rounded-full">
+                                <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1256&amp;q=80"
+                                    class="object-cover w-full h-full">
+                            </div>
+                            <div class="flex flex-col items-start justify-center">
+                                <h4 class="font-bold text-gray-800">Patick Smith</h4>
+                                <p class="text-gray-600">Lo recomiendo 100%.</p>
+                            </div>
+                        </div>
+                        <blockquote class="mt-8 text-lg text-gray-500">"Repleto de contenido increíble y exactamente lo
+                            que estaba buscando. Recomiendo encarecidamente esto a cualquiera."</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="pt-10">
+        <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
+            <h2
+                class="font-semibold dark:text-white lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-gray-800">
+                Preguntas frecuentes</h2>
+            <div class="mt-4 flex md:justify-between md:items-start md:flex-row flex-col justify-start items-start">
+                <div class="">
+                    <p class="font-normal dark:text-gray-400 text-base leading-6 text-gray-600 lg:w-8/12 md:w-9/12">
+                        Estas son algunas de las preguntas más frecuentes de nuestros valiosos clientes.</p>
+                </div>
+
+            </div>
+            <div class="flex md:flex-row flex-col md:space-x-8 md:mt-16 mt-8">
+                <div class="md:w-5/12 lg:w-4/12 w-full">
+                    <img src="img/about/lg.png" alt="Image of Glass bottle" class="w-full md:block hidden" />
+                    <img src="img/about/lg.png" alt="Image of Glass bottle" class="w-40 md:hidden block mx-auto" />
+                </div>
+                <div class="md:w-7/12 lg:w-8/12 w-full md:mt-0 sm:mt-14 mt-10">
+                    <!-- Shipping Section -->
+                    <div>
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <h3 class="font-semibold text-xl  dark:text-white leading-5 text-gray-800">ENVIO</h3>
+                            <button aria-label="too"
+                                class="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                onclick="openAnsSection(1)">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="path1" class="" d="M10 4.1665V15.8332" stroke="currentColor"
+                                        stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.16602 10H15.8327" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="para1"
+                            class="hidden font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12">
+                            Estamos cubriendo todos los países del mundo. El envío sale de España, envio de 7 dias para
+                            paises pertenecientes a la UE y 14 dias envios internacionales.</p>
+                    </div>
+
+                    <hr class="my-7 bg-gray-200" />
+
+                    <!-- Returns Section -->
+
+                    <div>
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <h3 class="font-semibold text-xl dark:text-white  leading-5 text-gray-800">DEVOLUCIONES</h3>
+                            <button aria-label="too"
+                                class="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                onclick="openAnsSection(2)">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="path2" class="" d="M10 4.1665V15.8332" stroke="currentColor"
+                                        stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.16602 10H15.8327" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="para2"
+                            class="hidden font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12">
+                            Devolución gratuita 15 dias una vez haya recibido el pedido, una vez pasado ese plazo no se
+                            admiten devoluciones, para mas informacion visite nuestra politica de devoluciones.</p>
+                    </div>
+
+                    <hr class="my-7 bg-gray-200" />
+
+                    <!-- Exchange Section -->
+
+                    <div>
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <h3 class="font-semibold text-xl dark:text-white  leading-5 text-gray-800">PAGO</h3>
+                            <button aria-label="too"
+                                class="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                onclick="openAnsSection(3)">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="path3" d="M10 4.1665V15.8332" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.16602 10H15.8327" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="para3"
+                            class="hidden font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12">
+                            Aceptamos pago por Tarjeta de credito, Transferencia bancaria o paypal.</p>
+                    </div>
+
+                    <hr class="my-7 bg-gray-200" />
+
+                    <!-- Tracking Section -->
+
+                    <div>
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <h3 class="font-semibold text-xl dark:text-white  leading-5 text-gray-800">SEGUIMIENTO DE
+                                PEDIDO</h3>
+                            <button aria-label="too"
+                                class="text-gray-800 dark:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                onclick="openAnsSection(4)">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="path4" d="M10 4.1665V15.8332" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.16602 10H15.8327" stroke="currentColor" stroke-width="1.25"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="para4"
+                            class="hidden font-normal dark:text-gray-400 text-base leading-6 text-gray-600 mt-4 w-11/12">
+                            Le facilitaremos un numero de envio al finalizar su pedido con el que podrá realizar el
+                            seguimiento del pedido.</p>
+                    </div>
+
+                    <hr class="my-7 bg-gray-200" />
+                </div>
+            </div>
+        </div>
+        <script>function openAnsSection(val) {
+                var p = document.getElementById("para" + val);
+                var svg = document.getElementById("path" + val);
+
+                if (p.classList.contains("hidden")) {
+                    p.classList.remove("hidden");
+                    p.classList.add("block");
+                } else {
+                    p.classList.remove("block");
+                    p.classList.add("hidden");
+                }
+
+                if (svg.classList.contains("hidden")) {
+                    svg.classList.remove("hidden");
+                    svg.classList.add("block");
+                } else {
+                    svg.classList.remove("block");
+                    svg.classList.add("hidden");
+                }
+            }
+        </script>
+    </section>
+    <!-- FIN FAQ -->
+
+
+    <!-- MAPA -->
+    <section class="mt-32 mb-32">
+        <h1
+            class="xl:text-5xl md:text-4xl text-2xl font-semibold leading-tight text-center text-gray-800 sm:mb-0 mb-12">
+            Más de 10 Años Brindando Servicio <br class="md:block hidden" />
+            en la Industria Textil
+        </h1>
+        <div class="md:mt-14 mt-4 relative sm:flex items-center justify-center">
+            <img src="https://i.ibb.co/KjrPCyW/map.png" alt="world map image"
+                class="w-full xl:h-full h-96 object-fill sm:block hidden" />
+            <img src="https://i.ibb.co/SXKj9Mf/map-bg.png" alt="mobile-image"
+                class="sm:hidden -mt-10 block w-full h-96 object-fill absolute z-0" />
+
+            <div
+                class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 mt-4 left-0 xl:ml-56 sm:ml-12 xl:-mt-40">
+                <p class="text-3xl font-semibold text-gray-800">5K+</p>
+                <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Visualizaciones del ultimo mes</p>
+            </div>
+            <div
+                class="shadow-lg xl:p-6 p-4 md:w-48 sm:w-auto w-full bg-white sm:absolute relative z-20 mt-4 xl:mt-80 sm:mt-56 xl:-ml-0 sm:-ml-12">
+                <p class="text-3xl font-semibold text-gray-800">8K+</p>
+                <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Valoraciones positivas</p>
+            </div>
+            <div
+                class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 md:mt-0 sm:-mt-5 mt-4 right-0 xl:mr-56 sm:mr-24">
+                <p class="text-3xl font-semibold text-gray-800">9K+</p>
+                <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Compras del ultimo año</p>
+            </div>
+        </div>
+    </section>
+    <!-- FIN MAPA -->
+
+    <!-- CONTACTO -->
+    <section>
+        <div class="py-4 bg-black text-white">
+            <div class="container mx-auto flex flex-col md:flex-row my-12 md:my-36">
+                <div class="flex flex-col w-full lg:w-2/5 p-8">
+                    <p class="text-3xl md:text-5xl text-yellow-500 my-4 leading-relaxed md:leading-snug">Contacta con
+                        nosotros</p>
+                    <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                        </svg>Calle Gema 4, 41020 SEVILLA, ESPAÑA</p>
+                    <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z" />
+                        </svg> blackice@support.com</p>
+                    <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
+                        </svg>+34 666 666 666</p> <br> <br>
+                </div>
+                <div class=" flex flex-col lg:w-3/5 justify-center w-full lg:-mt-12">
+                    <div class="container">
+                        <div class="relative flex flex-col min-w-0 break-words w-full">
+                            <div class="flex-auto p-5 lg:p-10">
+                                <img src="https://user-images.githubusercontent.com/54521023/152731049-cc744a56-1d6f-4945-9566-0fa3b7ad1d24.png"
+                                    alt="contact image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black">
+            <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
+                    md:flex-row max-w-6xl">
+
+            </div>
+        </div>
+    </section>
+    <!-- FIN CONTACTO -->
+
+    <!-- FOOTER/NAV -->
+    <footer>
+        <section class="">
+            <div class="bg-black">
+                <div class="max-w-6xl m-auto text-white flex flex-wrap justify-center">
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium">Home</div>
+                        <a class="my-3 block" href="/#">Inicio </a><a class="my-3 block" href="/#">Productos </a><a
+                            class="my-3 block" href="/#">About Us </a><a class="my-3 block" href="/#">Marcas </a><a
+                            class="my-3 block" href="/#">Carrito</a>
+                    </div>
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium">User</div>
+                        <a class="my-3 block" href="/#">Cuenta </a><a class="my-3 block" href="/#">Sign in</a><a
+                            class="my-3 block" href="/#">New Account</a><a class="my-3 block" href="/#">Pedidos <span
+                                class="text-red-700 text-xs p-1">New</span></a>
+                    </div>
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium">BRANDS</div>
+                        <a class="my-3 block" href="/#">GUCCI </a><a class="my-3 block" href="/#">PRADA </a><a
+                            class="my-3 block" href="/#">EMPORIO ARMANI<span
+                                class="text-red-700 text-xs p-1">New</span></a><a class="my-3 block"
+                            href="/#">BALENCIAGA <span class="text-red-700 text-xs p-1">New</span></a><a
+                            class="my-3 block" href="/#">CALVIN KLEIN </a><a class="my-3 block" href="/#">HACKET <span
+                                class="text-red-700 text-xs p-1">New</span></a>
+
+                    </div>
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium">CATEGORY</div>
+                        <a class="my-3 block" href="/#">Chaquetones </a><a class="my-3 block" href="/#">Cazadoras <span
+                                class="text-red-700 text-xs p-1">New</span></a><a class="my-3 block"
+                            href="/#">Americanas <span class="text-red-700 text-xs p-1">New</span></a><a
+                            class="my-3 block" href="/#">Jerseis </a><a class="my-3 block" href="/#">Camisas <span
+                                class="text-red-700 text-xs p-1">New</span></a><a class="my-3 block" href="/#">Sudaderas
+                        </a><a class="my-3 block" href="/#">Camisetas</a>
+                    </div>
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium"></div>
+                        <a class="my-3 block" href="/#">Polos </a><a class="my-3 block" href="/#">Pantalones </a><a
+                            class="my-3 block" href="/#">Bermudas </a><a class="my-3 block" href="/#">Jeans </a><a
+                            class="my-3 block" href="/#">Zapatos </a><a class="my-3 block" href="/#">Bolsos </a><a
+                            class="my-3 block" href="/#">Accesorios <span
+                                class="text-red-700 text-xs p-1">New</span></span></a>
+                    </div>
+                    <div class="p-5 w-48 ">
+                        <div class="text-xs uppercase text-gray-300 font-medium">Contact us</div>
+                        <a class="my-3 block" href="/#">Calle Gema, 41020, Sevilla, España <span
+                                class="text-white text-xs p-1"></span></a><a class="my-3 block"
+                            href="/#">blackice@support.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-black pt-2">
+                <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
+                        md:flex-row max-w-6xl">
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mx-auto">© 2022 <a
+                                href="Ainicio.html" target="_blank" class="hover:underline">BlackIce</a>. All Rights
+                            Reserved.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FIN FOOTER/NAV -->
+    </footer>
+
+</body>
+
+</html>

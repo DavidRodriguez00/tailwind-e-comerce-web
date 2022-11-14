@@ -1,2 +1,2 @@
 # tailwind-e-comerce-web
- Web sample whit Tailwind - HTML - CSS
+ Web Full-Responsive Sample. Tailwind - HTML - CSS
