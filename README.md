@@ -3,7 +3,7 @@
 <br>
 <br>
 
-#### Vews :
+#### Views :
 ---
 ##### Inicio
 ##### ![Inicio](https://github.com/DavidRodriguez00/tailwind-e-comerce-web/blob/main/img/mockup/inicio.png)
